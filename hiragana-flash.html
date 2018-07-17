@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hiragana Flash Cards</title>
+		<style>
+			body {
+				background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a2/Hokusai_au_mus%C3%A9e_Guimet_%288289711708%29.jpg');
+        background-size: 50%;
+			}
+			
+      header {
+        background-color: rgb(47, 49, 47, .9);
+        border-color: black;
+        border-width: 5px;
+        border-style: solid;
+        border-radius: 75px;
+        width: 70%;
+        margin: auto;
+        margin-top: 25px;
+      }
+
+		  h1,	h2 {
+				text-align: center;
+        color: rgb(196, 21, 21);
+			}
+			
+			img {
+				display: block;
+				width: 55%;
+				margin-left: 15%;
+				background-color: #ffffff;
+        margin-bottom: 30px;
+        margin-top: 10px;
+			}
+
+      aside {
+        float: right;
+        width: 30%;
+        margin-right: 30px;
+        background-color: rgb(47, 49, 47, .9);
+        border-color: black;
+        border-width: 5px;
+        border-style: solid;
+        border-radius: 75px;
+        padding-bottom: 80px;
+      }
+
+      section {
+        width: 55%;
+        margin-left: 30px;
+        margin-top: 45px;
+        background-color: rgb(47, 49, 47, .9);
+        border-color: black;
+        border-width: 5px;
+        border-style: solid;
+        border-radius: 75px;
+        padding-bottom: 20px;
+      }
+
+      a {
+        color: mediumslateblue;
+        margin-top: 25px;
+        margin-left: 60px;
+      }
+
+      a:visited {
+        color: rgb(185, 19, 185);
+      }
+			
+			#form1 {
+				width: 200px;
+				margin-left: 25%;
+			}
+			
+			#button {
+				margin-top: 5px;	
+			}
+
+      #alphabetPicker {
+        width: 100px;
+        margin-left: 125px;
+      }
+		</style>
+	</head>
+	<body>
+    <header>
+    <h1>Hiragana Flash Cards</h1>
+    </header>
+    <main>
+      <aside>
+        <h2>Choose what alphabet to practice</h2>
+        <a href="">Hiragana</a>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Table_hiragana.svg/2000px-Table_hiragana.svg.png" alt="Picture of a Hiragana table">
+        <a href="">Katakana</a>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Table_katakana.svg/2000px-Table_katakana.svg.png" alt="Picture of a Katakana table">
+        <!--<select name="alpabetPicker" id="alphabetPicker">
+          <option value="hiraganaCards">Hiragana</option>
+          <option value="katakanaCards">Katakana</option>
+        </select>-->
+      </aside>
+      <section>
+        <h2 id="leftHeading">Enter the correct Romanji</h2>
+
+        <div id="kanaLocation"></div>
+
+        <form id="form1">
+          <div>
+            <input name="input" id="input" type="text" size="20" autocomplete="off" required>
+          </div>
+          
+          <div>
+            <button id="button" onclick="formInput()">Submit</button>
+        </form>
+      </section>
+    </main>
+		<script>
+      'use strict';
+
+      var hiraA = new Image();
+			hiraA.alphabet = 'hiragana';
+			hiraA.src = 'a.png';
+			hiraA.answer = 'a';
+			
+			var hiraI = new Image();
+			hiraI.alphabet = 'hiragana';
+			hiraI.src = 'i.png';
+			hiraI.answer = 'i';
+			
+			var hiraU = new Image();
+			hiraU.alphabet = 'hiragana';
+			hiraU.src = 'u.png';
+			hiraU.answer = 'u';
+			
+			var hiraE = new Image();
+			hiraE.alphabet = 'hiragana';
+			hiraE.src = 'e.png';
+			hiraE.answer = 'e';
+			
+			var hiraO = new Image();
+			hiraO.alphabet = 'hiragana';
+			hiraO.src = 'o.png';
+			hiraO.answer = 'o';
+			
+			var hiraKa = new Image();
+			hiraKa.alphabet = 'hiragana';
+			hiraKa.src = 'ka.png';
+			hiraKa.answer = 'ka';
+      
+      var hiraArray = [hiraA, hiraI, hiraU, hiraE, hiraO, hiraKa];
+      
+      //Function pulling random image object from the array
+      function imgRandom(imgArr) {
+		        return imgArr[Math.floor(Math.random() * imgArr.length)];
+            }
+
+      //Assign said image object to randomHira variable
+      var randomHira = imgRandom(hiraArray);
+            
+      //Send the image to the div with kanaLocation id 
+      document.getElementById('kanaLocation').appendChild(randomHira);
+            
+      //Check whether User input is correct, formInput() is called when the user clicks the button
+      function formInput() {
+        if (document.getElementById("input").value.toLowerCase() === randomHira.answer) {
+          alert('Correct!');
+        } else {
+          alert('Try Again!')
+        }
+      }
+		</script>
+	</body>
+</html>
