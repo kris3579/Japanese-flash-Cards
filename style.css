@@ -1,0 +1,77 @@
+body {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a2/Hokusai_au_mus%C3%A9e_Guimet_%288289711708%29.jpg');
+  background-size: 50%;
+}
+
+header {
+  background-color: rgb(47, 49, 47, .9);
+  border-color: black;
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 75px;
+  width: 70%;
+  margin: auto;
+  margin-top: 25px;
+}
+
+h1,	h2 {
+  text-align: center;
+  color: rgb(196, 21, 21);
+}
+
+img {
+  display: block;
+  width: 55%;
+  margin-left: 15%;
+  background-color: #ffffff;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+aside {
+  float: right;
+  width: 30%;
+  margin-right: 50px;
+  background-color: rgb(47, 49, 47, .9);
+  border-color: black;
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 75px;
+  padding-bottom: 80px;
+}
+
+section {
+  width: 55%;
+  margin-left: 50px;
+  margin-top: 45px;
+  background-color: rgb(47, 49, 47, .9);
+  border-color: black;
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 75px;
+  padding-bottom: 20px;
+}
+
+a {
+  color: mediumslateblue;
+  margin-top: 25px;
+  margin-left: 60px;
+}
+
+a:visited {
+  color: rgb(185, 19, 185);
+}
+
+#form1 {
+  width: 200px;
+  margin-left: 25%;
+}
+
+#button {
+  margin-top: 5px;	
+}
+
+#alphabetPicker {
+  width: 100px;
+  margin-left: 125px;
+}
