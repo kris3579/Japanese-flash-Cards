@@ -36,6 +36,7 @@ hiraKa.alphabet = 'hiragana';
 hiraKa.src = 'ka.png';
 hiraKa.answer = 'ka';
 
+// Arrays to store each of the characters as objects
 var hiraArray = [hiraA, hiraI, hiraU, hiraE, hiraO, hiraKa];
 var kataArray = [];
 
@@ -52,19 +53,47 @@ var randomKata = imgRandom(kataArray);
 document.getElementById('hiraLocation').appendChild(randomHira);
 document.getElementById('kanaLocation').appendChild(randomKata);
 
+//Create the variable which will be used to append text validating user's answer, and a variable for the form it will be appended to
+// var validation = document.getElementById('validity');
+var form = document.getElementById('form1');
+
 //Check whether User input is correct, formInput() is called when the user clicks the button
 function hiraFormInput() {
   if (document.getElementById('input').value.toLowerCase() === randomHira.answer) {
-    alert('Correct!');
+    // if (validation) {
+    //   form.removeChild(validation);
+    // }
+    document.getElementById('validity').src = 'correct.png';
+    // form.appendChild(validation);
   } else {
-    alert('Try Again!');
+    if (validation) {
+      form.removeChild(validation);
+    }
+    validation.textContent = 'Try Again!';
+    form.appendChild(validation);
   }
 }
 
 function kataFormInput() {
   if (document.getElementById('input').value.toLowerCase() === randomKata.answer) {
-    alert('Correct!');
+    if (validation) {
+      form.removeChild(validation);
+    }
+    validation.textContent = 'Correct!';
+    form.appendChild(validation);
   } else {
-    alert('Try Again!');
+    if (validation) {
+      form.removeChild(validation);
+    }
+    validation.textContent = 'Try Again!';
+    form.appendChild(validation);
   }
 }
+
+form.addEventListener('submit', function (event) {
+  if (event.target.document.documentElement = 'hiragana-flash.html') {
+    hiraFormInput();
+  } else {
+    kataFormInput();
+  }
+});
