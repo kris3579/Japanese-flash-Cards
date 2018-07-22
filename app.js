@@ -1,10 +1,4 @@
-'use strict';
-
-// Use ths form with Image objects?
-// function hiragana(src, answer) {
-//   this.src = src;
-//   this.answer = answer;
-// }
+'use strict';h
 
 var hiraA = new Image();
 hiraA.alphabet = 'hiragana';
@@ -60,11 +54,8 @@ var form = document.getElementById('form1');
 //Check whether User input is correct, formInput() is called when the user clicks the button
 function hiraFormInput() {
   if (document.getElementById('input').value.toLowerCase() === randomHira.answer) {
-    // if (validation) {
-    //   form.removeChild(validation);
-    // }
-    document.getElementById('validity').src = 'correct.png';
-    // form.appendChild(validation);
+    // document.getElementById('validity').src = 'correct.png';
+    alert('correct');
   } else {
     if (validation) {
       form.removeChild(validation);
