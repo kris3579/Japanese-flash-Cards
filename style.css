@@ -11,7 +11,7 @@ header {
   border-radius: 75px;
   width: 70%;
   margin: auto;
-  margin-top: 25px;
+  margin-top: 1.5%;
 }
 
 h1,	h2 {
@@ -21,41 +21,56 @@ h1,	h2 {
 
 img {
   display: block;
-  width: 55%;
-  margin-left: 15%;
+  width: 50%;
+  margin: auto;
   background-color: #ffffff;
   margin-bottom: 30px;
   margin-top: 10px;
 }
 
-aside {
-  float: right;
-  width: 30%;
-  margin-right: 50px;
-  background-color: rgb(47, 49, 47, .9);
-  border-color: black;
-  border-width: 5px;
-  border-style: solid;
-  border-radius: 75px;
-  padding-bottom: 80px;
+input {
+  display: inline-block;
+  margin-top: 2.5%; 
+}
+
+aside img {
+  width: 70%;
 }
 
 section {
   width: 55%;
-  margin-left: 50px;
-  margin-top: 45px;
+  margin-left: 5%;
+  margin-top: 3%;
+  padding-top: 1%;
   background-color: rgb(47, 49, 47, .9);
   border-color: black;
   border-width: 5px;
   border-style: solid;
   border-radius: 75px;
-  padding-bottom: 20px;
+  padding-bottom: 1%;
+}
+
+aside {
+  float: right;
+}
+
+main aside {
+  float: right;
+  width: 25%;
+  margin-right: 5%;
+  background-color: rgb(47, 49, 47, .9);
+  border-color: black;
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 75px;
+  padding: 1%;
 }
 
 a {
   color: mediumslateblue;
-  margin-top: 25px;
-  margin-left: 60px;
+  margin-top: 1%;
+  margin-left: 10%;
+  font-size: 1.25em;
 }
 
 a:visited {
@@ -63,15 +78,24 @@ a:visited {
 }
 
 #form1 {
-  width: 200px;
-  margin-left: 25%;
+  width: 77%;
+  margin-left: 15%;
 }
 
 #button {
-  margin-top: 5px;	
+  margin-top: 1%;	
 }
 
-#alphabetPicker {
-  width: 100px;
-  margin-left: 125px;
+#checklocation {
+  background-color: transparent;
+  border: none;
+  padding: none;
+}
+
+#checklocation img {
+  width: 30%;
+  background-color: transparent;
+}
+#validation {
+  margin-bottom: 20px;
 }

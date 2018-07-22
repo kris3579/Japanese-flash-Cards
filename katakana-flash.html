@@ -14,29 +14,32 @@
 
       <aside>
         <h2>Choose what alphabet to practice</h2>
-        <a href="">Hiragana</a>
+        <a href="hiragana-flash.html">Hiragana</a>
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Table_hiragana.svg/2000px-Table_hiragana.svg.png" alt="Picture of a Hiragana table">
-        <a href="">Katakana</a>
+        <a href="katakana-flash.html">Katakana</a>
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Table_katakana.svg/2000px-Table_katakana.svg.png" alt="Picture of a Katakana table">
       </aside>
 
       <section>
         <h2 id="leftHeading">Enter the correct Romanji</h2>
 
-        <div id="kataLocation"></div>
+        <div id="imgSection"></div>
+        
+        <form id="form1" onsubmit="return false">
 
-        <form id="form1">
           <div>
-            <input name="answer" type="text" size="20" autocomplete="off" required>
+            <aside id="checklocation"></aside>
+            <input name="input" id="input" type="text" size="20" autocomplete="off" required>
           </div>
           
           <div>
-            <button id="button" onclick="kataFormInput()">Submit</button>
+            <button id="button" onclick="nukeMakeDiv()">Submit</button>
+          </div>
+
         </form>
       </section>
-
     </main>
     
-		<script src="app.js"></script>
+		<script src="js/kataApp.js"></script>
 	</body>
 </html>

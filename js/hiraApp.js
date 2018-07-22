@@ -1,44 +1,36 @@
 'use strict';
 
 var check = new Image();
-check.src = 'check.png';
+check.src = 'assets/check.png';
 
 var cross = new Image();
-cross.src = 'cross.png';
+cross.src = 'assets/cross.png';
 
 var hiraA = new Image();
-hiraA.alphabet = 'hiragana';
-hiraA.src = 'a.png';
+hiraA.src = 'hiraimgs/a.png';
 hiraA.answer = 'a';
 
 var hiraI = new Image();
-hiraI.alphabet = 'hiragana';
-hiraI.src = 'i.png';
+hiraI.src = 'hiraimgs/i.png';
 hiraI.answer = 'i';
 
 var hiraU = new Image();
-hiraU.alphabet = 'hiragana';
-hiraU.src = 'u.png';
+hiraU.src = 'hiraimgs/u.png';
 hiraU.answer = 'u';
 
 var hiraE = new Image();
-hiraE.alphabet = 'hiragana';
-hiraE.src = 'e.png';
+hiraE.src = 'hiraimgs/e.png';
 hiraE.answer = 'e';
 
 var hiraO = new Image();
-hiraO.alphabet = 'hiragana';
-hiraO.src = 'o.png';
+hiraO.src = 'hiraimgs/o.png';
 hiraO.answer = 'o';
 
 var hiraKa = new Image();
-hiraKa.alphabet = 'hiragana';
-hiraKa.src = 'ka.png';
+hiraKa.src = 'hiraimgs/ka.png';
 hiraKa.answer = 'ka';
 
-// Arrays to store each of the characters as objects
 var hiraArray = [hiraA, hiraI, hiraU, hiraE, hiraO, hiraKa];
-// var kataArray = [];
 
 // Function pulling random image object from the array
 function imgRandom(imgArr) {
@@ -77,7 +69,6 @@ function nukeMakeDiv() {
   if (validation) {
     document.getElementById('validation').removeChild(validator);
     document.getElementById('checklocation').removeChild(validation);
-
   }
   document.getElementById('checklocation').appendChild(validationDiv);
   append();
@@ -95,13 +86,4 @@ function append() {
   }
 }
 
-// function kataFormInput() {
-//   if (document.getElementById('input').value.toLowerCase() === randomKata.answer) {
-//     alert('Correct!');
-//   } else {
-//     alert('Try Again!');
-//   }
-// }
-
 image();
-
