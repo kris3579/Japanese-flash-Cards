@@ -36,6 +36,7 @@ hiraKa.alphabet = 'hiragana';
 hiraKa.src = 'ka.png';
 hiraKa.answer = 'ka';
 
+// Arrays to store each of the characters as objects
 var hiraArray = [hiraA, hiraI, hiraU, hiraE, hiraO, hiraKa];
 // var kataArray = [];
 
@@ -76,6 +77,7 @@ function nukeMakeDiv() {
   if (validation) {
     document.getElementById('validation').removeChild(validator);
     document.getElementById('checklocation').removeChild(validation);
+
   }
   document.getElementById('checklocation').appendChild(validationDiv);
   append();
@@ -102,3 +104,4 @@ function append() {
 // }
 
 image();
+
