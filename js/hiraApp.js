@@ -21,10 +21,10 @@ var hiraI = new Image();
 hiraI.src = 'hiraimgs/i.png';
 hiraI.answer = 'i';
 var hiraU = new Image();
-hiraU.src = 'hiraimgs/e.png';
+hiraU.src = 'hiraimgs/u.png';
 hiraU.answer = 'u';
 var hiraE = new Image();
-hiraE.src = 'hiraimgs/u.png';
+hiraE.src = 'hiraimgs/e.png';
 hiraE.answer = 'e';
 var hiraO = new Image();
 hiraO.src = 'hiraimgs/o.png';
@@ -97,7 +97,7 @@ hiraHi.src = 'hiraimgs/hi.png';
 hiraHi.answer = 'hi';
 var hiraFu = new Image();
 hiraFu.src = 'hiraimgs/fu.png';
-hiraFu.answer = 'fu';
+hiraFu.answer = 'fu' || 'hu';
 var hiraHe = new Image();
 hiraHe.src = 'hiraimgs/he.png';
 hiraHe.answer = 'he';
@@ -195,14 +195,35 @@ function nukeMakeDiv() {
   append();
 }
 
+var note = document.createElement('p');
+note.textContent = 'The correct romanji was ' + randomHira.answer.bold() + '.';
+
+
 function append() {
-  if (document.getElementById('input').value.toLowerCase() === randomHira.answer) {
+  // if (Make text.content reset and disapear)
+  if  (randomHira.answer === 'fu' && document.getElementById('input').value.toLowerCase() !== randomHira.answer) {
+    validator = cross;
+    document.getElementById('validation').appendChild(validator);
+    note.setAttribute('id', 'wrongP');
+    note.textContent = 'The correct romanji could have been fu or hu.';
+    document.getElementById('div').appendChild(note);
+    image();
+  } else if (randomHira.answer === 'fu' && document.getElementById('input').value.toLowerCase() === randomHira.answer) {
+    validator = check;
+    document.getElementById('validation').appendChild(validator);
+    note.setAttribute('id', 'rightP');
+    note.textContent = 'The correct romanji could have been fu or hu.';
+    document.getElementById('div').appendChild(note);
+    image();
+  } else if (document.getElementById('input').value.toLowerCase() === randomHira.answer) {
     validator = check;
     document.getElementById('validation').appendChild(validator);
     image();
   } else {
     validator = cross;
     document.getElementById('validation').appendChild(validator);
+    note.setAttribute('id', 'wrongP');
+    document.getElementById('div').appendChild(note);
     image();
   }
 }

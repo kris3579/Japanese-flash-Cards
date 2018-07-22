@@ -51,7 +51,7 @@ section {
 }
 
 aside {
-  float: right;
+  float: left;
 }
 
 main aside {
@@ -78,7 +78,7 @@ a:visited {
 }
 
 #form1 {
-  width: 77%;
+  width: 70%;
   margin-left: 15%;
 }
 
@@ -93,9 +93,19 @@ a:visited {
 }
 
 #checklocation img {
-  width: 30%;
+  width: 40%;
   background-color: transparent;
+  float: right;
 }
-#validation {
-  margin-bottom: 20px;
+
+#wrongP {
+  color: rgb(216, 52, 52);
+  float: right;
+  font-size: 1.15em;
+}
+
+#rightP {
+  color: rgb(56, 167, 28);
+  float: right;
+  font-size: 1.15em;
 }
