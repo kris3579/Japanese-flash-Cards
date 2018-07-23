@@ -160,11 +160,8 @@ function imgRandom(imgArr) {
 
 // Assign said image object to randomHira variable
 var randomHira = imgRandom(hiraArray);
-// var randomKata = imgRandom(kataArray);
 var locationDiv = document.createElement('div');
 locationDiv.setAttribute('id', 'hiraLocation');
-var validationDiv = document.createElement('div');
-validationDiv.setAttribute('id', 'validation');
 
 function image() {
   var location = document.getElementById('hiraLocation');
@@ -184,46 +181,58 @@ function image() {
 // Check whether User input is correct, formInput() is called when the user clicks the button
 
 var validator;
+var validationSection = document.createElement('section');
+validationSection.setAttribute('id', 'validationSection');
+var validationAside = document.createElement('aside');
+validationAside.setAttribute('id', 'checklocation');
 
-function nukeMakeDiv() {
-  var validation = document.getElementById('validation');
+function nukeMakeSection() {
+  var validation = document.getElementById('validationSection');
   if (validation) {
-    document.getElementById('validation').removeChild(validator);
-    document.getElementById('checklocation').removeChild(validation);
+    document.getElementById('checklocation').removeChild(validator);
+    document.getElementById('main').removeChild(validationSection);
   }
-  document.getElementById('checklocation').appendChild(validationDiv);
+  document.getElementById('main').appendChild(validationSection);
+  document.getElementById('validationSection').appendChild(validationAside);
   append();
 }
 
 var note = document.createElement('p');
-note.textContent = 'The correct romanji was ' + randomHira.answer.bold() + '.';
+note.textContent = 'The correct romanji was ' + randomHira.answer + '.';
 
 
 function append() {
-  // if (Make text.content reset and disapear)
-  if  (randomHira.answer === 'fu' && document.getElementById('input').value.toLowerCase() !== randomHira.answer) {
+  var wrong = document.getElementById('wrongP');
+  if (wrong) {
+    note.textContent = 'The correct romanji was ' + randomHira.answer + '.';
+    document.getElementById('validationSection').removeChild(wrong);
+  }
+  if (randomHira.answer === 'fu' && document.getElementById('input').value.toLowerCase() !== randomHira.answer) {
     validator = cross;
-    document.getElementById('validation').appendChild(validator);
+    document.getElementById('checklocation').appendChild(validator);
     note.setAttribute('id', 'wrongP');
     note.textContent = 'The correct romanji could have been fu or hu.';
-    document.getElementById('div').appendChild(note);
+    document.getElementById('validationSection').appendChild(note);
     image();
   } else if (randomHira.answer === 'fu' && document.getElementById('input').value.toLowerCase() === randomHira.answer) {
     validator = check;
-    document.getElementById('validation').appendChild(validator);
+    document.getElementById('checklocation').appendChild(validator);
     note.setAttribute('id', 'rightP');
-    note.textContent = 'The correct romanji could have been fu or hu.';
-    document.getElementById('div').appendChild(note);
+    note.textContent = 'Correct! The correct romanji could have been fu or hu.';
+    document.getElementById('validationSection').appendChild(note);
     image();
   } else if (document.getElementById('input').value.toLowerCase() === randomHira.answer) {
     validator = check;
-    document.getElementById('validation').appendChild(validator);
+    document.getElementById('checklocation').appendChild(validator);
+    note.setAttribute('id', 'rightP');
+    note.textContent = 'Correct!';
+    document.getElementById('validationSection').appendChild(note);
     image();
   } else {
     validator = cross;
-    document.getElementById('validation').appendChild(validator);
+    document.getElementById('checklocation').appendChild(validator);
     note.setAttribute('id', 'wrongP');
-    document.getElementById('div').appendChild(note);
+    document.getElementById('validationSection').appendChild(note);
     image();
   }
 }
