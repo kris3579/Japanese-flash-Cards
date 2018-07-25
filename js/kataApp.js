@@ -56,6 +56,12 @@ function nukeMakeSection() {
   var validation = document.getElementById('validationSection');
   // If the section IS there
   if (validation) {
+    if (note) {
+      document.getElementById('validationSection').removeChild(note);
+    }
+    if (validator) {
+      document.getElementById('checklocation').removeChild(validator);
+    }
     // Remove the section from the main body tag
     document.getElementById('main').removeChild(validationSection);
   }
@@ -69,42 +75,44 @@ function nukeMakeSection() {
 
 // Sets variable to make a note validating the User's answer
 var note = document.createElement('p');
-note.textContent = 'The correct romanji was ' + randomKata.answer + '.';
 
 //This function appends an image and a note validation the User's answer
 function append() {
-  var wrong = document.getElementById('wrongP');
-  if (wrong) {
-    note.textContent = 'The correct romanji was ' + randomKata.answer + '.';
-    document.getElementById('validationSection').removeChild(wrong);
-  }
-  if (randomKata.answer === 'fu' && document.getElementById('input').value.toLowerCase() !== randomKata.answer) {
-    validator = cross;
-    document.getElementById('checklocation').appendChild(validator);
-    note.setAttribute('id', 'wrongP');
-    note.textContent = 'The correct romanji could have been fu or hu.';
-    document.getElementById('validationSection').appendChild(note);
-    image();
-  } else if (randomKata.answer === 'fu' && document.getElementById('input').value.toLowerCase() === randomKata.answer) {
-    validator = check;
-    document.getElementById('checklocation').appendChild(validator);
-    note.setAttribute('id', 'rightP');
-    note.textContent = 'Correct! The correct romanji could have been fu or hu.';
-    document.getElementById('validationSection').appendChild(note);
-    image();
-  } else if (document.getElementById('input').value.toLowerCase() === randomKata.answer) {
-    validator = check;
-    document.getElementById('checklocation').appendChild(validator);
-    note.setAttribute('id', 'rightP');
-    note.textContent = 'Correct!';
-    document.getElementById('validationSection').appendChild(note);
-    image();
+  if (randomKata === kataFu) {
+
+    if (randomKata.answer === 'fu' && document.getElementById('input').value.toLowerCase() !== randomKata.answer) {
+      validator = cross;
+      document.getElementById('checklocation').appendChild(validator);
+      note.setAttribute('id', 'wrongP');
+      note.textContent = 'The correct romanji could have been fu or hu.';
+      document.getElementById('validationSection').appendChild(note);
+      image();
+    } else if (randomKata.answer === 'fu' && document.getElementById('input').value.toLowerCase() === randomKata.answer) {
+      validator = check;
+      document.getElementById('checklocation').appendChild(validator);
+      note.setAttribute('id', 'rightP');
+      note.textContent = 'Correct! The correct romanji could have been fu or hu.';
+      document.getElementById('validationSection').appendChild(note);
+      image();
+    }
+
   } else {
-    validator = cross;
-    document.getElementById('checklocation').appendChild(validator);
-    note.setAttribute('id', 'wrongP');
-    document.getElementById('validationSection').appendChild(note);
-    image();
+
+    if (document.getElementById('input').value.toLowerCase() === randomKata.answer) {
+      validator = check;
+      document.getElementById('checklocation').appendChild(validator);
+      note.setAttribute('id', 'rightP');
+      note.textContent = 'Correct!';
+      document.getElementById('validationSection').appendChild(note);
+      image();
+    } else {
+      validator = cross;
+      document.getElementById('checklocation').appendChild(validator);
+      note.setAttribute('id', 'wrongP');
+      note.textContent = 'The correct romanji was ' + randomKata.answer + '.';
+      document.getElementById('validationSection').appendChild(note);
+      image();
+    }
   }
 }
 
