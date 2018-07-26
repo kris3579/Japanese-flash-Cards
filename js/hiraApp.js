@@ -16,23 +16,23 @@ check.src = 'assets/check.png';
 var cross = new Image();
 cross.src = 'assets/cross.png';
 
-// var hiraA = 
+// var hiraA =
 new Img('a', 'hiraimgs/a.png', 'a');
 // hiraA.src = 'hiraimgs/a.png';
 // hiraA.answer = 'a';
-// var hiraI = 
+// var hiraI =
 new Img('i', 'hiraimgs/i.png', 'i');
 // hiraI.src = 'hiraimgs/i.png';
 // hiraI.answer = 'i';
-// var hiraU = 
+// var hiraU =
 new Img('u', 'hiraimgs/u.png', 'u');
 // hiraU.src = 'hiraimgs/u.png';
 // hiraU.answer = 'u';
-// var hiraE = 
+// var hiraE =
 new Img('e', 'hiraimgs/e.png', 'e');
 // hiraE.src = 'hiraimgs/e.png';
 // hiraE.answer = 'e';
-// var hiraO = 
+// var hiraO =
 new Img('o', 'hiraimgs/o.png', 'o');
 // hiraO.src = 'hiraimgs/o.png';
 // hiraO.answer = 'o';
@@ -170,15 +170,16 @@ var randomHira = imgRandom(hiraArray);
 // Create a div and set id of hira location to append the image to later
 var locationDiv = document.createElement('div');
 locationDiv.setAttribute('id', 'hiraLocation');
+var characterImage = document.createElement('img');
 
-// This function replaces the flash card, called once immediatly then every time the form is submited
+// This function replaces the flash card, called once immediatly then every time the form is submitted
 function image() {
   // Set variable as the div in order to check if the div is there
   var location = document.getElementById('hiraLocation');
   // If the div IS there
   if (location) {
     // Remove the current character image from the div
-    document.getElementById('hiraLocation').removeChild(randomHira);
+    document.getElementById('hiraLocation').removeChild(characterImage);
     // Remove the div from the section
     document.getElementById('imgSection').removeChild(location);
   }
@@ -186,8 +187,9 @@ function image() {
   document.getElementById('imgSection').appendChild(locationDiv);
   // Get a random character image
   randomHira = imgRandom(hiraArray);
+  characterImage.src = randomHira.src;
   // Append image to the div with hiraLocation id
-  document.getElementById('hiraLocation').appendChild(randomHira);
+  document.getElementById('hiraLocation').appendChild(characterImage);
   // Clear the text entry box of the User's previous answer
   document.forms['form1'].reset();
 }
