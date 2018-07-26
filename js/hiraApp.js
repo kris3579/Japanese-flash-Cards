@@ -3,6 +3,9 @@
 // Declare an array for all objects, or "characters" to push themselves into
 var hiraArray = [];
 
+// Declare an array for previously answered pictures to reference
+var noRepeat = [];
+
 // Contructor for "character" objects, including a name to be referenced for the validation comment,
 // a src for the relavent image, and a answer to check the form input against.
 function Img(name, src, answer) {
@@ -96,7 +99,11 @@ new Img('po', 'hiraimgs/po.png', 'po');
 
 // Function picking random "character" object from the array
 function imgRandom(imgArr) {
-  return imgArr[Math.floor(Math.random() * imgArr.length)];
+  var random = imgArr[Math.floor(Math.random() * imgArr.length)];
+  while (noRepeat.includes(random.name)) {
+    random = imgArr[Math.floor(Math.random() * imgArr.length)];
+  }
+  return random;
 }
 
 
@@ -186,6 +193,8 @@ function append() {
       note.setAttribute('id', 'wrongP');
       note.textContent = 'The correct romanji could have been fu or hu.';
       document.getElementById('validationSection').appendChild(note);
+      // Push name of randomHira into noRepeat array
+      noRepeat.push(randomHira.name);
       // Run the image funtion
       image();
 
@@ -199,11 +208,13 @@ function append() {
       note.setAttribute('id', 'rightP');
       note.textContent = 'Correct! The correct romanji could have been fu or hu.';
       document.getElementById('validationSection').appendChild(note);
+      // Push name of randomHira into noRepeat array
+      noRepeat.push(randomHira.name);
       // Run the image funtion
       image();
     }
 
-  // Else if the character is NOT "fu"
+    // Else if the character is NOT "fu"
   } else {
 
     //If the User's input turned into lower case Does equal the "character's" answer
@@ -216,10 +227,12 @@ function append() {
       note.setAttribute('id', 'rightP');
       note.textContent = 'Correct!';
       document.getElementById('validationSection').appendChild(note);
+      // Push name of randomHira into noRepeat array
+      noRepeat.push(randomHira.name);
       // Run the image funtion
       image();
 
-    // Else if the User's input turned into lower case does NOT equal the "character's" answer
+      // Else if the User's input turned into lower case does NOT equal the "character's" answer
     } else {
       // Assign the validator to a positive image and append it to the validation section
       validator = cross;
@@ -229,6 +242,8 @@ function append() {
       note.setAttribute('id', 'wrongP');
       note.textContent = 'The correct romanji was ' + randomHira.answer + '.';
       document.getElementById('validationSection').appendChild(note);
+      // Push name of randomHira into noRepeat array
+      noRepeat.push(randomHira.name);
       // Run the image funtion
       image();
     }

@@ -148,7 +148,7 @@ function nukeMakeSection() {
     // If the note IS there, remove it
     if (note) {
       document.getElementById('validationSection').removeChild(note);
-    } 
+    }
 
     // If the validator Is there, remove it
     if (validator) {
