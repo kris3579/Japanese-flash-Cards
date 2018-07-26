@@ -62,10 +62,12 @@ new Img('ro', 'hiraimgs/ro.png', 'ro');
 new Img('wa', 'hiraimgs/wa.png', 'wa');
 new Img('n', 'hiraimgs/n.png', 'n');
 
+
 // Function pulling random image object from the array
 function imgRandom(imgArr) {
   return imgArr[Math.floor(Math.random() * imgArr.length)];
 }
+
 
 // Assign said image object to randomHira variable
 var randomHira = imgRandom(hiraArray);
@@ -74,6 +76,7 @@ var locationDiv = document.createElement('div');
 locationDiv.setAttribute('id', 'hiraLocation');
 var characterImage = document.createElement('img');
 
+
 // This function replaces the flash card, called once immediatly then every time the form is submitted
 function image() {
   // Set variable as the div in order to check if the div is there
@@ -81,20 +84,21 @@ function image() {
   // If the div IS there
   if (location) {
     // Remove the current character image from the div
-    document.getElementById('hiraLocation').removeChild(characterImage);
+    // document.getElementById('hiraLocation').removeChild(characterImage);
     // Remove the div from the section
-    document.getElementById('imgSection').removeChild(location);
+    document.getElementById('imgSection').removeChild(characterImage);
   }
   // Append the hiraLocation div to the section
-  document.getElementById('imgSection').appendChild(locationDiv);
   // Get a random character image
   randomHira = imgRandom(hiraArray);
   characterImage.src = randomHira.src;
+  document.getElementById('imgSection').appendChild(characterImage);
   // Append image to the div with hiraLocation id
-  document.getElementById('hiraLocation').appendChild(characterImage);
+  // document.getElementById('hiraLocation').appendChild(characterImage);
   // Clear the text entry box of the User's previous answer
   document.forms['form1'].reset();
 }
+
 
 // Declare validator variable for global use, it will be assigned the image used to validate the User's answer
 var validator;
@@ -105,6 +109,7 @@ validationSection.setAttribute('id', 'validationSection');
 var validationAside = document.createElement('aside');
 validationAside.setAttribute('id', 'checklocation');
 
+
 // This function gets rid of the validation section if it exists, and remakes a new one
 // This function gets called upon the submit of the button, and starts the chain of functions providing the full answer
 function nukeMakeSection() {
@@ -112,12 +117,14 @@ function nukeMakeSection() {
   var validation = document.getElementById('validationSection');
   // If the section IS there
   if (validation) {
+
     if (note) {
       document.getElementById('validationSection').removeChild(note);
     }
     if (validator) {
       document.getElementById('checklocation').removeChild(validator);
     }
+
     // Remove the section from the main body tag
     document.getElementById('main').removeChild(validationSection);
   }
@@ -129,8 +136,10 @@ function nukeMakeSection() {
   append();
 }
 
+
 // Sets variable to make a note validating the User's answer
 var note = document.createElement('p');
+
 
 //This function appends an image and a note validation the User's answer
 function append() {
