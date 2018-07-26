@@ -16,149 +16,51 @@ check.src = 'assets/check.png';
 var cross = new Image();
 cross.src = 'assets/cross.png';
 
-// var hiraA =
 new Img('a', 'hiraimgs/a.png', 'a');
-// hiraA.src = 'hiraimgs/a.png';
-// hiraA.answer = 'a';
-// var hiraI =
 new Img('i', 'hiraimgs/i.png', 'i');
-// hiraI.src = 'hiraimgs/i.png';
-// hiraI.answer = 'i';
-// var hiraU =
 new Img('u', 'hiraimgs/u.png', 'u');
-// hiraU.src = 'hiraimgs/u.png';
-// hiraU.answer = 'u';
-// var hiraE =
 new Img('e', 'hiraimgs/e.png', 'e');
-// hiraE.src = 'hiraimgs/e.png';
-// hiraE.answer = 'e';
-// var hiraO =
 new Img('o', 'hiraimgs/o.png', 'o');
-// hiraO.src = 'hiraimgs/o.png';
-// hiraO.answer = 'o';
-// var hiraKa = new Img();
-// hiraKa.src = 'hiraimgs/ka.png';
-// hiraKa.answer = 'ka';
-// var hiraKi = new Img();
-// hiraKi.src = 'hiraimgs/ki.png';
-// hiraKi.answer = 'ki';
-// var hiraKu = new Img();
-// hiraKu.src = 'hiraimgs/ku.png';
-// hiraKu.answer = 'ku';
-// var hiraKe = new Img();
-// hiraKe.src = 'hiraimgs/ke.png';
-// hiraKe.answer = 'ke';
-// var hiraKo = new Img();
-// hiraKo.src = 'hiraimgs/ko.png';
-// hiraKo.answer = 'ko';
-// var hiraSa = new Img();
-// hiraSa.src = 'hiraimgs/sa.png';
-// hiraSa.answer = 'sa';
-// var hiraShi = new Img();
-// hiraShi.src = 'hiraimgs/shi.png';
-// hiraShi.answer = 'shi';
-// var hiraSu = new Img();
-// hiraSu.src = 'hiraimgs/su.png';
-// hiraSu.answer = 'su';
-// var hiraSe = new Img();
-// hiraSe.src = 'hiraimgs/se.png';
-// hiraSe.answer = 'se';
-// var hiraSo = new Img();
-// hiraSo.src = 'hiraimgs/so.png';
-// hiraSo.answer = 'so';
-// var hiraTa = new Img();
-// hiraTa.src = 'hiraimgs/ta.png';
-// hiraTa.answer = 'ta';
-// var hiraChi = new Img();
-// hiraChi.src = 'hiraimgs/chi.png';
-// hiraChi.answer = 'chi';
-// var hiraTsu = new Img();
-// hiraTsu.src = 'hiraimgs/tsu.png';
-// hiraTsu.answer = 'tsu';
-// var hiraTe = new Img();
-// hiraTe.src = 'hiraimgs/te.png';
-// hiraTe.answer = 'te';
-// var hiraTo = new Img();
-// hiraTo.src = 'hiraimgs/to.png';
-// hiraTo.answer = 'to';
-// var hiraNa = new Img();
-// hiraNa.src = 'hiraimgs/na.png';
-// hiraNa.answer = 'na';
-// var hiraNi = new Img();
-// hiraNi.src = 'hiraimgs/ni.png';
-// hiraNi.answer = 'ni';
-// var hiraNu = new Img();
-// hiraNu.src = 'hiraimgs/nu.png';
-// hiraNu.answer = 'nu';
-// var hiraNe = new Img();
-// hiraNe.src = 'hiraimgs/ne.png';
-// hiraNe.answer = 'ne';
-// var hiraNo = new Img();
-// hiraNo.src = 'hiraimgs/no.png';
-// hiraNo.answer = 'no';
-// var hiraHa = new Img();
-// hiraHa.src = 'hiraimgs/ha.png';
-// hiraHa.answer = 'ha';
-// var hiraHi = new Img();
-// hiraHi.src = 'hiraimgs/hi.png';
-// hiraHi.answer = 'hi';
-// var hiraFu = new Img();
-// hiraFu.src = 'hiraimgs/fu.png';
-// hiraFu.answer = ['fu', 'hu'];
-// var hiraHe = new Img();
-// hiraHe.src = 'hiraimgs/he.png';
-// hiraHe.answer = 'he';
-// var hiraHo = new Img();
-// hiraHo.src = 'hiraimgs/ho.png';
-// hiraHo.answer = 'ho';
-// var hiraMa = new Img();
-// hiraMa.src = 'hiraimgs/ma.png';
-// hiraMa.answer = 'ma';
-// var hiraMi = new Img();
-// hiraMi.src = 'hiraimgs/mi.png';
-// hiraMi.answer = 'mi';
-// var hiraMu = new Img();
-// hiraMu.src = 'hiraimgs/mu.png';
-// hiraMu.answer = 'mu';
-// var hiraMe = new Img();
-// hiraMe.src = 'hiraimgs/me.png';
-// hiraMe.answer = 'me';
-// var hiraMo = new Img();
-// hiraMo.src = 'hiraimgs/mo.png';
-// hiraMo.answer = 'mo';
-// var hiraYa = new Img();
-// hiraYa.src = 'hiraimgs/ya.png';
-// hiraYa.answer = 'ya';
-// var hiraYu = new Img();
-// hiraYu.src = 'hiraimgs/yu.png';
-// hiraYu.answer = 'yu';
-// var hiraYo = new Img();
-// hiraYo.src = 'hiraimgs/yo.png';
-// hiraYo.answer = 'yo';
-// var hiraRa = new Img();
-// hiraRa.src = 'hiraimgs/ra.png';
-// hiraRa.answer = 'ra';
-// var hiraRi = new Img();
-// hiraRi.src = 'hiraimgs/ri.png';
-// hiraRi.answer = 'ri';
-// var hiraRu = new Img();
-// hiraRu.src = 'hiraimgs/ru.png';
-// hiraRu.answer = 'ru';
-// var hiraRe = new Img();
-// hiraRe.src = 'hiraimgs/re.png';
-// hiraRe.answer = 're';
-// var hiraRo = new Img();
-// hiraRo.src = 'hiraimgs/ro.png';
-// hiraRo.answer = 'ro';
-// var hiraWa = new Img();
-// hiraWa.src = 'hiraimgs/wa.png';
-// hiraWa.answer = 'wa';
-// var hiraN = new Img();
-// hiraN.src = 'hiraimgs/n.png';
-// hiraN.answer = 'n';
-
-// var hiraArray = [hiraA, hiraI, hiraU, hiraE, hiraO, hiraKa, hiraKi, hiraKu, hiraKe, hiraKo, hiraSa, hiraShi, hiraSu, hiraSe, hiraSo, hiraTa, hiraChi, hiraTsu, hiraTe, hiraTo, hiraNa, hiraNi, hiraNu, hiraNe, hiraNo, hiraHa, hiraHi, hiraFu, hiraHe, hiraHo, hiraMa, hiraMi, hiraMu, hiraMe, hiraMo, hiraYa, hiraYu, hiraYo, hiraRa, hiraRi, hiraRu, hiraRe, hiraRo, hiraWa, hiraN];
-
+new Img('ka', 'hiraimgs/ka.png', 'ka');
+new Img('ki', 'hiraimgs/ki.png', 'ki');
+new Img('ku', 'hiraimgs/ku.png', 'ku');
+new Img('ke', 'hiraimgs/ke.png', 'ke');
+new Img('ko', 'hiraimgs/ko.png', 'ko');
+new Img('sa', 'hiraimgs/sa.png', 'sa');
+new Img('shi', 'hiraimgs/shi.png', 'shi');
+new Img('su', 'hiraimgs/su.png', 'su');
+new Img('se', 'hiraimgs/se.png', 'se');
+new Img('so', 'hiraimgs/so.png', 'so');
+new Img('ta', 'hiraimgs/ta.png', 'ta');
+new Img('chi', 'hiraimgs/chi.png', 'chi');
+new Img('tsu', 'hiraimgs/tsu.png', 'tsu');
+new Img('te', 'hiraimgs/te.png', 'te');
+new Img('to', 'hiraimgs/to.png', 'to');
+new Img('na', 'hiraimgs/na.png', 'na');
+new Img('ni', 'hiraimgs/ni.png', 'ni');
+new Img('nu', 'hiraimgs/nu.png', 'nu');
+new Img('ne', 'hiraimgs/ne.png', 'ne');
+new Img('no', 'hiraimgs/no.png', 'no');
+new Img('ha', 'hiraimgs/ha.png', 'ha');
+new Img('hi', 'hiraimgs/hi.png', 'hi');
+new Img('fu', 'hiraimgs/fu.png', ['fu', 'hu']);
+new Img('he', 'hiraimgs/he.png', 'he');
+new Img('ho', 'hiraimgs/ho.png', 'ho');
+new Img('ma', 'hiraimgs/ma.png', 'ma');
+new Img('mi', 'hiraimgs/mi.png', 'mi');
+new Img('mu', 'hiraimgs/mu.png', 'mu');
+new Img('me', 'hiraimgs/me.png', 'me');
+new Img('mo', 'hiraimgs/mo.png', 'mo');
+new Img('ya', 'hiraimgs/ya.png', 'ya');
+new Img('yu', 'hiraimgs/yu.png', 'yu');
+new Img('yo', 'hiraimgs/yo.png', 'yo');
+new Img('ra', 'hiraimgs/ra.png', 'ra');
+new Img('ri', 'hiraimgs/ri.png', 'ri');
+new Img('ru', 'hiraimgs/ru.png', 'ru');
+new Img('re', 'hiraimgs/re.png', 're');
+new Img('ro', 'hiraimgs/ro.png', 'ro');
+new Img('wa', 'hiraimgs/wa.png', 'wa');
+new Img('n', 'hiraimgs/n.png', 'n');
 
 // Function pulling random image object from the array
 function imgRandom(imgArr) {
@@ -232,42 +134,42 @@ var note = document.createElement('p');
 
 //This function appends an image and a note validation the User's answer
 function append() {
-  // if (randomHira === hiraFu) {
+  if (randomHira.name === 'fu') {
 
-  //   if (document.getElementById('input').value.toLowerCase() !== randomHira.answer[0] && document.getElementById('input').value.toLowerCase() !== randomHira.answer[1]) {
-  //     validator = cross;
-  //     document.getElementById('checklocation').appendChild(validator);
-  //     note.setAttribute('id', 'wrongP');
-  //     note.textContent = 'The correct romanji could have been fu or hu.';
-  //     document.getElementById('validationSection').appendChild(note);
-  //     image();
-  //   } else if(document.getElementById('input').value.toLowerCase() === randomHira.answer[0] || document.getElementById('input').value.toLowerCase() === randomHira.answer[1]) {
-  //     validator = check;
-  //     document.getElementById('checklocation').appendChild(validator);
-  //     note.setAttribute('id', 'rightP');
-  //     note.textContent = 'Correct! The correct romanji could have been fu or hu.';
-  //     document.getElementById('validationSection').appendChild(note);
-  //     image();
-  //   }
+    if (document.getElementById('input').value.toLowerCase() !== randomHira.answer[0] && document.getElementById('input').value.toLowerCase() !== randomHira.answer[1]) {
+      validator = cross;
+      document.getElementById('checklocation').appendChild(validator);
+      note.setAttribute('id', 'wrongP');
+      note.textContent = 'The correct romanji could have been fu or hu.';
+      document.getElementById('validationSection').appendChild(note);
+      image();
+    } else if (document.getElementById('input').value.toLowerCase() === randomHira.answer[0] || document.getElementById('input').value.toLowerCase() === randomHira.answer[1]) {
+      validator = check;
+      document.getElementById('checklocation').appendChild(validator);
+      note.setAttribute('id', 'rightP');
+      note.textContent = 'Correct! The correct romanji could have been fu or hu.';
+      document.getElementById('validationSection').appendChild(note);
+      image();
+    }
 
-  // } else {
-
-  if (document.getElementById('input').value.toLowerCase() === randomHira.answer) {
-    validator = check;
-    document.getElementById('checklocation').appendChild(validator);
-    note.setAttribute('id', 'rightP');
-    note.textContent = 'Correct!';
-    document.getElementById('validationSection').appendChild(note);
-    image();
   } else {
-    validator = cross;
-    document.getElementById('checklocation').appendChild(validator);
-    note.setAttribute('id', 'wrongP');
-    note.textContent = 'The correct romanji was ' + randomHira.answer + '.';
-    document.getElementById('validationSection').appendChild(note);
-    image();
+
+    if (document.getElementById('input').value.toLowerCase() === randomHira.answer) {
+      validator = check;
+      document.getElementById('checklocation').appendChild(validator);
+      note.setAttribute('id', 'rightP');
+      note.textContent = 'Correct!';
+      document.getElementById('validationSection').appendChild(note);
+      image();
+    } else {
+      validator = cross;
+      document.getElementById('checklocation').appendChild(validator);
+      note.setAttribute('id', 'wrongP');
+      note.textContent = 'The correct romanji was ' + randomHira.answer + '.';
+      document.getElementById('validationSection').appendChild(note);
+      image();
+    }
   }
-  // }
 }
 
 image();
