@@ -61,6 +61,31 @@ new Img('re', 'kataimgs/re.png', 're');
 new Img('ro', 'kataimgs/ro.png', 'ro');
 new Img('wa', 'kataimgs/wa.png', 'wa');
 new Img('n', 'kataimgs/n.png', 'n');
+new Img('ga', 'kataimgs/ga.png', 'ga');
+new Img('gi', 'kataimgs/gi.png', 'gi');
+new Img('gu', 'kataimgs/gu.png', 'gu');
+new Img('ge', 'kataimgs/ge.png', 'ge');
+new Img('go', 'kataimgs/go.png', 'go');
+new Img('za', 'kataimgs/za.png', 'za');
+new Img('ji', 'kataimgs/shi-ji.png', 'ji');
+new Img('zu', 'kataimgs/su-zu.png', 'zu');
+new Img('ze', 'kataimgs/ze.png', 'ze');
+new Img('zo', 'kataimgs/zo.png', 'zo');
+new Img('da', 'kataimgs/da.png', 'da');
+new Img('ji', 'kataimgs/chi-ji.png', 'ji');
+new Img('zu', 'kataimgs/tsu-zu.png', 'zu');
+new Img('de', 'kataimgs/de.png', 'de');
+new Img('do', 'kataimgs/do.png', 'do');
+new Img('ba', 'kataimgs/ba.png', 'ba');
+new Img('bi', 'kataimgs/bi.png', 'bi');
+new Img('bu', 'kataimgs/bu.png', 'bu');
+new Img('be', 'kataimgs/be.png', 'be');
+new Img('bo', 'kataimgs/bo.png', 'bo');
+new Img('pa', 'kataimgs/pa.png', 'pa');
+new Img('pi', 'kataimgs/pi.png', 'pi');
+new Img('pu', 'kataimgs/pu.png', 'pu');
+new Img('pe', 'kataimgs/pe.png', 'pe');
+new Img('po', 'kataimgs/po.png', 'po');
 
 
 // Function pulling random image object from the array

@@ -61,6 +61,31 @@ new Img('re', 'hiraimgs/re.png', 're');
 new Img('ro', 'hiraimgs/ro.png', 'ro');
 new Img('wa', 'hiraimgs/wa.png', 'wa');
 new Img('n', 'hiraimgs/n.png', 'n');
+new Img('ga', 'hiraimgs/ga.png', 'ga');
+new Img('gi', 'hiraimgs/gi.png', 'gi');
+new Img('gu', 'hiraimgs/gu.png', 'gu');
+new Img('ge', 'hiraimgs/ge.png', 'ge');
+new Img('go', 'hiraimgs/go.png', 'go');
+new Img('za', 'hiraimgs/za.png', 'za');
+new Img('ji', 'hiraimgs/shi-ji.png', 'ji');
+new Img('zu', 'hiraimgs/su-zu.png', 'zu');
+new Img('ze', 'hiraimgs/ze.png', 'ze');
+new Img('zo', 'hiraimgs/zo.png', 'zo');
+new Img('da', 'hiraimgs/da.png', 'da');
+// new Img('ji', 'hiraimgs/chi-ji.png', 'ji');
+new Img('zu', 'hiraimgs/tsu-zu.png', 'zu');
+new Img('de', 'hiraimgs/de.png', 'de');
+new Img('do', 'hiraimgs/do.png', 'do');
+new Img('ba', 'hiraimgs/ba.png', 'ba');
+new Img('bi', 'hiraimgs/bi.png', 'bi');
+new Img('bu', 'hiraimgs/bu.png', 'bu');
+new Img('be', 'hiraimgs/be.png', 'be');
+new Img('bo', 'hiraimgs/bo.png', 'bo');
+new Img('pa', 'hiraimgs/pa.png', 'pa');
+new Img('pi', 'hiraimgs/pi.png', 'pi');
+new Img('pu', 'hiraimgs/pu.png', 'pu');
+new Img('pe', 'hiraimgs/pe.png', 'pe');
+new Img('po', 'hiraimgs/po.png', 'po');
 
 
 // Function pulling random image object from the array
