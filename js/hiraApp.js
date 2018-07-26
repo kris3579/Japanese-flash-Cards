@@ -1,21 +1,27 @@
 'use strict';
 
+// Declare an array for all objects, or "characters" to push themselves into
 var hiraArray = [];
 
+// Contructor for "character" objects, including a name to be referenced for the validation comment,
+// a src for the relavent image, and a answer to check the form input against.
 function Img(name, src, answer) {
   this.name = name;
   this.src = src;
   this.answer = answer;
 
+  // All characters push themselves into the array
   hiraArray.push(this);
 }
 
+// Images for validation of the User's answer
 var check = new Image();
 check.src = 'assets/check.png';
 
 var cross = new Image();
 cross.src = 'assets/cross.png';
 
+// Declaration of "character" objects
 new Img('a', 'hiraimgs/a.png', 'a');
 new Img('i', 'hiraimgs/i.png', 'i');
 new Img('u', 'hiraimgs/u.png', 'u');
@@ -88,38 +94,34 @@ new Img('pe', 'hiraimgs/pe.png', 'pe');
 new Img('po', 'hiraimgs/po.png', 'po');
 
 
-// Function pulling random image object from the array
+// Function picking random "character" object from the array
 function imgRandom(imgArr) {
   return imgArr[Math.floor(Math.random() * imgArr.length)];
 }
 
 
-// Assign said image object to randomHira variable
+// Assign a "character" object to randomHira variable
 var randomHira = imgRandom(hiraArray);
-// Create a div and set id of hira location to append the image to later
-var locationDiv = document.createElement('div');
-locationDiv.setAttribute('id', 'hiraLocation');
+// Create a img and set id of charImage to find later
 var characterImage = document.createElement('img');
+characterImage.setAttribute('id', 'charImage');
 
 
 // This function replaces the flash card, called once immediatly then every time the form is submitted
 function image() {
   // Set variable as the div in order to check if the div is there
-  var location = document.getElementById('hiraLocation');
-  // If the div IS there
-  if (location) {
+  var location = document.getElementById('imgSection');
+  // If an image IS there
+  if (document.getElementById('charImage')) {
     // Remove the current character image from the div
-    // document.getElementById('hiraLocation').removeChild(characterImage);
-    // Remove the div from the section
-    document.getElementById('imgSection').removeChild(characterImage);
+    location.removeChild(characterImage);
   }
-  // Append the hiraLocation div to the section
   // Get a random character image
   randomHira = imgRandom(hiraArray);
+  // Set new img element's src as the "character" image src
   characterImage.src = randomHira.src;
-  document.getElementById('imgSection').appendChild(characterImage);
-  // Append image to the div with hiraLocation id
-  // document.getElementById('hiraLocation').appendChild(characterImage);
+  // Append img to page
+  location.appendChild(characterImage);
   // Clear the text entry box of the User's previous answer
   document.forms['form1'].reset();
 }
@@ -143,9 +145,12 @@ function nukeMakeSection() {
   // If the section IS there
   if (validation) {
 
+    // If the note IS there, remove it
     if (note) {
       document.getElementById('validationSection').removeChild(note);
     }
+
+    // If the validator Is there, remove it
     if (validator) {
       document.getElementById('checklocation').removeChild(validator);
     }
@@ -168,39 +173,63 @@ var note = document.createElement('p');
 
 //This function appends an image and a note validation the User's answer
 function append() {
+  // If the character IS "fu"
   if (randomHira.name === 'fu') {
 
+    // If the User's input does not equal either "fu" or "hu"
     if (document.getElementById('input').value.toLowerCase() !== randomHira.answer[0] && document.getElementById('input').value.toLowerCase() !== randomHira.answer[1]) {
+      // Assign the validator to a negative image and append it to the validation section
       validator = cross;
       document.getElementById('checklocation').appendChild(validator);
+      // Set the note's id to wrongP to style it as negative validation
+      // fill the note with negative validation text, and append it to the validation section.
       note.setAttribute('id', 'wrongP');
       note.textContent = 'The correct romanji could have been fu or hu.';
       document.getElementById('validationSection').appendChild(note);
+      // Run the image funtion
       image();
+
+      // Else if the User's input DOES equal either "fu" OR "hu"
     } else if (document.getElementById('input').value.toLowerCase() === randomHira.answer[0] || document.getElementById('input').value.toLowerCase() === randomHira.answer[1]) {
+      // Assign the validator to a positive image and append it to the validation section
       validator = check;
       document.getElementById('checklocation').appendChild(validator);
+      // Set the note's id to wrongP to style it as positive validation
+      // fill the note with positive validation text, and append it to the validation section.
       note.setAttribute('id', 'rightP');
       note.textContent = 'Correct! The correct romanji could have been fu or hu.';
       document.getElementById('validationSection').appendChild(note);
+      // Run the image funtion
       image();
     }
 
+  // Else if the character is NOT "fu"
   } else {
 
+    //If the User's input turned into lower case Does equal the "character's" answer
     if (document.getElementById('input').value.toLowerCase() === randomHira.answer) {
+      // Assign the validator to a positive image and append it to the validation section
       validator = check;
       document.getElementById('checklocation').appendChild(validator);
+      // Set the note's id to wrongP to style it as positive validation
+      // fill the note with positive validation text, and append it to the validation section.
       note.setAttribute('id', 'rightP');
       note.textContent = 'Correct!';
       document.getElementById('validationSection').appendChild(note);
+      // Run the image funtion
       image();
+
+    // Else if the User's input turned into lower case does NOT equal the "character's" answer
     } else {
+      // Assign the validator to a positive image and append it to the validation section
       validator = cross;
       document.getElementById('checklocation').appendChild(validator);
+      // Set the note's id to wrongP to style it as negative validation
+      // fill the note with negative validation text, and append it to the validation section.
       note.setAttribute('id', 'wrongP');
       note.textContent = 'The correct romanji was ' + randomHira.answer + '.';
       document.getElementById('validationSection').appendChild(note);
+      // Run the image funtion
       image();
     }
   }
