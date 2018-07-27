@@ -3,6 +3,12 @@
 // Declare an array for all objects, or "characters" to push themselves into
 var kataArray = [];
 
+// Declare an array for previously answered pictures to reference
+var noRepeat = [];
+
+var rightCount = 0;
+var wrongCount = 0;
+
 // Contructor for "character" objects, including a name to be referenced for the validation comment,
 // a src for the relavent image, and a answer to check the form input against.
 function Img(name, src, answer) {
@@ -20,6 +26,12 @@ check.src = 'assets/check.png';
 
 var cross = new Image();
 cross.src = 'assets/cross.png';
+
+var wrongCountImg = new Image();
+wrongCountImg.src = 'assets/cross.png';
+
+var rightCountImg = new Image();
+rightCountImg.src = 'assets/check.png';
 
 // Declaration of "character" objects
 new Img('a', 'kataimgs/a.png', 'a');
@@ -96,7 +108,19 @@ new Img('po', 'kataimgs/po.png', 'po');
 
 // Function picking random "character" object from the array
 function imgRandom(imgArr) {
-  return imgArr[Math.floor(Math.random() * imgArr.length)];
+  checkNoRepeat();
+  var random = imgArr[Math.floor(Math.random() * imgArr.length)];
+  while (noRepeat.includes(random.name)) {
+    random = imgArr[Math.floor(Math.random() * imgArr.length)];
+  }
+  return random;
+}
+
+
+function checkNoRepeat() {
+  if (noRepeat.length = 26) {
+    noRepeat.shift();
+  }
 }
 
 
@@ -164,6 +188,34 @@ function nukeMakeSection() {
   document.getElementById('validationSection').appendChild(validationAside);
   // Run the append funtion
   append();
+  nukeMakeCountAside();
+}
+
+
+var countAside = document.createElement('aside');
+countAside.setAttribute('id', 'countAside');
+var appendRightCount = document.createElement('p');
+appendRightCount.setAttribute('class', 'rightP');
+var appendWrongCount = document.createElement('p');
+appendWrongCount.setAttribute('class', 'wrongP');
+
+function nukeMakeCountAside() {
+  if (ranOnce > 0) {
+    countAside.removeChild(appendWrongCount);
+    countAside.removeChild(wrongCountImg);
+    countAside.removeChild(appendRightCount);
+    countAside.removeChild(rightCountImg);
+    document.getElementById('footer').removeChild(countAside);
+  }
+  var ranOnce;
+
+  countAside.appendChild(rightCountImg);
+  appendRightCount.textContent = rightCount;
+  countAside.appendChild(appendRightCount);
+  countAside.appendChild(wrongCountImg);
+  appendWrongCount.textContent = wrongCount;
+  countAside.appendChild(appendWrongCount);
+  document.getElementById('footer').appendChild(countAside);
 }
 
 
@@ -178,6 +230,7 @@ function append() {
 
     // If the User's input does not equal either "fu" or "hu"
     if (document.getElementById('input').value.toLowerCase() !== randomKata.answer[0] && document.getElementById('input').value.toLowerCase() !== randomKata.answer[1]) {
+      wrongCount++;
       // Assign the validator to a negative image and append it to the validation section
       validator = cross;
       document.getElementById('checklocation').appendChild(validator);
@@ -186,11 +239,14 @@ function append() {
       note.setAttribute('id', 'wrongP');
       note.textContent = 'The correct romanji could have been fu or hu.';
       document.getElementById('validationSection').appendChild(note);
+      // Push name of randomKata into noRepeat array
+      noRepeat.push(randomKata.name);
       // Run the image funtion
       image();
 
       // Else if the User's input DOES equal either "fu" OR "hu"
     } else if (document.getElementById('input').value.toLowerCase() === randomKata.answer[0] || document.getElementById('input').value.toLowerCase() === randomKata.answer[1]) {
+      rightCount++;
       // Assign the validator to a positive image and append it to the validation section
       validator = check;
       document.getElementById('checklocation').appendChild(validator);
@@ -199,6 +255,8 @@ function append() {
       note.setAttribute('id', 'rightP');
       note.textContent = 'Correct! The correct romanji could have been fu or hu.';
       document.getElementById('validationSection').appendChild(note);
+      // Push name of randomKata into noRepeat array
+      noRepeat.push(randomKata.name);
       // Run the image funtion
       image();
     }
@@ -208,6 +266,7 @@ function append() {
 
     //If the User's input turned into lower case Does equal the "character's" answer
     if (document.getElementById('input').value.toLowerCase() === randomKata.answer) {
+      rightCount++;
       // Assign the validator to a positive image and append it to the validation section
       validator = check;
       document.getElementById('checklocation').appendChild(validator);
@@ -216,11 +275,14 @@ function append() {
       note.setAttribute('id', 'rightP');
       note.textContent = 'Correct!';
       document.getElementById('validationSection').appendChild(note);
+      // Push name of randomKata into noRepeat array
+      noRepeat.push(randomKata.name);
       // Run the image funtion
       image();
 
     // Else if the User's input turned into lower case does NOT equal the "character's" answer
     } else {
+      wrongCount++;
       // Assign the validator to a positive image and append it to the validation section
       validator = cross;
       document.getElementById('checklocation').appendChild(validator);
@@ -229,6 +291,8 @@ function append() {
       note.setAttribute('id', 'wrongP');
       note.textContent = 'The correct romanji was ' + randomKata.answer + '.';
       document.getElementById('validationSection').appendChild(note);
+      // Push name of randomKata into noRepeat array
+      noRepeat.push(randomKata.name);
       // Run the image funtion
       image();
     }

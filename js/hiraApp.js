@@ -200,7 +200,7 @@ var appendWrongCount = document.createElement('p');
 appendWrongCount.setAttribute('class', 'wrongP');
 
 function nukeMakeCountAside() {
-  if (ranOnce > 0) {console.log('resdf');
+  if (ranOnce > 0) {
     countAside.removeChild(appendWrongCount);
     countAside.removeChild(wrongCountImg);
     countAside.removeChild(appendRightCount);
