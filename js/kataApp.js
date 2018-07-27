@@ -179,11 +179,11 @@ function nukeMakeSection() {
       document.getElementById('checklocation').removeChild(validator);
     }
 
-    // Remove the section from the main body tag
-    document.getElementById('main').removeChild(validationSection);
+    // Remove the section from the footer body tag
+    document.getElementById('footer').removeChild(validationSection);
   }
-  // Append the section to the main body tag
-  document.getElementById('main').appendChild(validationSection);
+  // Append the section to the footer body tag
+  document.getElementById('footer').appendChild(validationSection);
   // Append the aside fot the validator image
   document.getElementById('validationSection').appendChild(validationAside);
   // Run the append funtion
@@ -234,9 +234,9 @@ function append() {
       // Assign the validator to a negative image and append it to the validation section
       validator = cross;
       document.getElementById('checklocation').appendChild(validator);
-      // Set the note's id to wrongP to style it as negative validation
+      // Set the note's class to wrongP to style it as negative validation
       // fill the note with negative validation text, and append it to the validation section.
-      note.setAttribute('id', 'wrongP');
+      note.setAttribute('class', 'wrongP');
       note.textContent = 'The correct romanji could have been fu or hu.';
       document.getElementById('validationSection').appendChild(note);
       // Push name of randomKata into noRepeat array
@@ -250,9 +250,9 @@ function append() {
       // Assign the validator to a positive image and append it to the validation section
       validator = check;
       document.getElementById('checklocation').appendChild(validator);
-      // Set the note's id to wrongP to style it as positive validation
+      // Set the note's class to wrongP to style it as positive validation
       // fill the note with positive validation text, and append it to the validation section.
-      note.setAttribute('id', 'rightP');
+      note.setAttribute('class', 'rightP');
       note.textContent = 'Correct! The correct romanji could have been fu or hu.';
       document.getElementById('validationSection').appendChild(note);
       // Push name of randomKata into noRepeat array
@@ -270,9 +270,9 @@ function append() {
       // Assign the validator to a positive image and append it to the validation section
       validator = check;
       document.getElementById('checklocation').appendChild(validator);
-      // Set the note's id to wrongP to style it as positive validation
+      // Set the note's class to wrongP to style it as positive validation
       // fill the note with positive validation text, and append it to the validation section.
-      note.setAttribute('id', 'rightP');
+      note.setAttribute('class', 'rightP');
       note.textContent = 'Correct!';
       document.getElementById('validationSection').appendChild(note);
       // Push name of randomKata into noRepeat array
@@ -286,9 +286,9 @@ function append() {
       // Assign the validator to a positive image and append it to the validation section
       validator = cross;
       document.getElementById('checklocation').appendChild(validator);
-      // Set the note's id to wrongP to style it as negative validation
+      // Set the note's class to wrongP to style it as negative validation
       // fill the note with negative validation text, and append it to the validation section.
-      note.setAttribute('id', 'wrongP');
+      note.setAttribute('class', 'wrongP');
       note.textContent = 'The correct romanji was ' + randomKata.answer + '.';
       document.getElementById('validationSection').appendChild(note);
       // Push name of randomKata into noRepeat array

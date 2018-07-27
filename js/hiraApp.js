@@ -179,10 +179,10 @@ function nukeMakeSection() {
       document.getElementById('checklocation').removeChild(validator);
     }
 
-    // Remove the section from the main body tag
+    // Remove the section from the footer body tag
     document.getElementById('footer').removeChild(validationSection);
   }
-  // Append the section to the main body tag
+  // Append the section to the footer body tag
   document.getElementById('footer').appendChild(validationSection);
   // Append the aside fot the validator image
   document.getElementById('validationSection').appendChild(validationAside);
