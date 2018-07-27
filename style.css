@@ -12,11 +12,14 @@ header {
   width: 70%;
   margin: auto;
   margin-top: 1.5%;
+  margin-bottom: 2%;
 }
 
 h1,	h2 {
   text-align: center;
   color: rgb(196, 21, 21);
+  margin: 0%;
+  margin-bottom: 1%;
 }
 
 img {
@@ -35,14 +38,13 @@ input {
 
 aside img {
   width: 70%;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 section {
   width: 55%;
-  /* height: 80%; */
   margin-left: 5%;
-  margin-top: 2%;
+  /* margin-top: 2%; */
   padding-top: 1%;
   background-color: rgb(47, 49, 47, .9);
   border-color: black;
@@ -50,6 +52,7 @@ section {
   border-style: solid;
   border-radius: 75px;
   padding-bottom: 1%;
+  display: inline-block;
 }
 
 aside {
@@ -79,6 +82,22 @@ a:visited {
   color: rgb(185, 19, 185);
 }
 
+.wrongP {
+  color: rgb(216, 52, 52);
+  font-size: 1.15em;
+  margin-top: 3%;
+  margin-right: 10%;
+  display: inline-block;
+}
+      
+.rightP {
+  color: rgb(56, 167, 28);
+  font-size: 1.15em;
+  margin-top: 3%;
+  margin-right: 10%;
+  display: inline-block;
+}
+
 #form1 {
   width: 85%;
   margin-left: 30%;
@@ -89,30 +108,44 @@ a:visited {
 }
 
 #checklocation {
-  float: left;
+  width: 5%;
   background-color: transparent;
   border: none;
   padding: 0px;
   margin: 0px;
+  margin-left: 5%;
+  margin-right: 2%;
 }
 
 #checklocation img {
-  width: 25%;
+  width: 100%;
   background-color: transparent;
+  display: inline-block;
+  margin: 0%;
+  margin-top: 20%;
 }
 
-#wrongP {
-  color: rgb(216, 52, 52);
-  font-size: 1.15em;
-  margin-top: 3%
+#countAside {
+  float: right;
+  width: 25%;
+  margin-right: 5%;
+  background-color: rgb(47, 49, 47, .9);
+  border-color: black;
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 75px;
+  padding: 1%;
+  margin-top: 2%;
 }
 
-#rightP {
-  color: rgb(56, 167, 28);
-  font-size: 1.15em;
-  margin-top: 3%
+#countAside img {
+  width: 10.5%;
+  background-color: transparent;
+  display: inline-block;
+  margin: 0%;
+  margin-right: 5%;
+  margin-left: 15%;
 }
-
 #validationSection {
-  padding-bottom: 1%;
+  margin-top: 2%;
 }

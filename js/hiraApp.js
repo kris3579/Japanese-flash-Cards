@@ -6,6 +6,9 @@ var hiraArray = [];
 // Declare an array for previously answered pictures to reference
 var noRepeat = [];
 
+var rightCount = 0;
+var wrongCount = 0;
+
 // Contructor for "character" objects, including a name to be referenced for the validation comment,
 // a src for the relavent image, and a answer to check the form input against.
 function Img(name, src, answer) {
@@ -23,6 +26,12 @@ check.src = 'assets/check.png';
 
 var cross = new Image();
 cross.src = 'assets/cross.png';
+
+var wrongCountImg = new Image();
+wrongCountImg.src = 'assets/cross.png';
+
+var rightCountImg = new Image();
+rightCountImg.src = 'assets/check.png';
 
 // Declaration of "character" objects
 new Img('a', 'hiraimgs/a.png', 'a');
@@ -99,11 +108,19 @@ new Img('po', 'hiraimgs/po.png', 'po');
 
 // Function picking random "character" object from the array
 function imgRandom(imgArr) {
+  checkNoRepeat();
   var random = imgArr[Math.floor(Math.random() * imgArr.length)];
   while (noRepeat.includes(random.name)) {
     random = imgArr[Math.floor(Math.random() * imgArr.length)];
   }
   return random;
+}
+
+
+function checkNoRepeat() {
+  if (noRepeat.length = 26) {
+    noRepeat.shift();
+  }
 }
 
 
@@ -163,14 +180,42 @@ function nukeMakeSection() {
     }
 
     // Remove the section from the main body tag
-    document.getElementById('main').removeChild(validationSection);
+    document.getElementById('footer').removeChild(validationSection);
   }
   // Append the section to the main body tag
-  document.getElementById('main').appendChild(validationSection);
+  document.getElementById('footer').appendChild(validationSection);
   // Append the aside fot the validator image
   document.getElementById('validationSection').appendChild(validationAside);
   // Run the append funtion
   append();
+  nukeMakeCountAside();
+}
+
+
+var countAside = document.createElement('aside');
+countAside.setAttribute('id', 'countAside');
+var appendRightCount = document.createElement('p');
+appendRightCount.setAttribute('class', 'rightP');
+var appendWrongCount = document.createElement('p');
+appendWrongCount.setAttribute('class', 'wrongP');
+
+function nukeMakeCountAside() {
+  if (ranOnce > 0) {console.log('resdf');
+    countAside.removeChild(appendWrongCount);
+    countAside.removeChild(wrongCountImg);
+    countAside.removeChild(appendRightCount);
+    countAside.removeChild(rightCountImg);
+    document.getElementById('footer').removeChild(countAside);
+  }
+  var ranOnce;
+
+  countAside.appendChild(rightCountImg);
+  appendRightCount.textContent = rightCount;
+  countAside.appendChild(appendRightCount);
+  countAside.appendChild(wrongCountImg);
+  appendWrongCount.textContent = wrongCount;
+  countAside.appendChild(appendWrongCount);
+  document.getElementById('footer').appendChild(countAside);
 }
 
 
@@ -185,12 +230,13 @@ function append() {
 
     // If the User's input does not equal either "fu" or "hu"
     if (document.getElementById('input').value.toLowerCase() !== randomHira.answer[0] && document.getElementById('input').value.toLowerCase() !== randomHira.answer[1]) {
+      wrongCount++;
       // Assign the validator to a negative image and append it to the validation section
       validator = cross;
       document.getElementById('checklocation').appendChild(validator);
-      // Set the note's id to wrongP to style it as negative validation
+      // Set the note's class to wrongP to style it as negative validation
       // fill the note with negative validation text, and append it to the validation section.
-      note.setAttribute('id', 'wrongP');
+      note.setAttribute('class', 'wrongP');
       note.textContent = 'The correct romanji could have been fu or hu.';
       document.getElementById('validationSection').appendChild(note);
       // Push name of randomHira into noRepeat array
@@ -200,12 +246,13 @@ function append() {
 
       // Else if the User's input DOES equal either "fu" OR "hu"
     } else if (document.getElementById('input').value.toLowerCase() === randomHira.answer[0] || document.getElementById('input').value.toLowerCase() === randomHira.answer[1]) {
+      rightCount++;
       // Assign the validator to a positive image and append it to the validation section
       validator = check;
       document.getElementById('checklocation').appendChild(validator);
-      // Set the note's id to wrongP to style it as positive validation
+      // Set the note's class to wrongP to style it as positive validation
       // fill the note with positive validation text, and append it to the validation section.
-      note.setAttribute('id', 'rightP');
+      note.setAttribute('class', 'rightP');
       note.textContent = 'Correct! The correct romanji could have been fu or hu.';
       document.getElementById('validationSection').appendChild(note);
       // Push name of randomHira into noRepeat array
@@ -219,12 +266,13 @@ function append() {
 
     //If the User's input turned into lower case Does equal the "character's" answer
     if (document.getElementById('input').value.toLowerCase() === randomHira.answer) {
+      rightCount++;
       // Assign the validator to a positive image and append it to the validation section
       validator = check;
       document.getElementById('checklocation').appendChild(validator);
-      // Set the note's id to wrongP to style it as positive validation
+      // Set the note's class to wrongP to style it as positive validation
       // fill the note with positive validation text, and append it to the validation section.
-      note.setAttribute('id', 'rightP');
+      note.setAttribute('class', 'rightP');
       note.textContent = 'Correct!';
       document.getElementById('validationSection').appendChild(note);
       // Push name of randomHira into noRepeat array
@@ -234,12 +282,13 @@ function append() {
 
       // Else if the User's input turned into lower case does NOT equal the "character's" answer
     } else {
+      wrongCount++;
       // Assign the validator to a positive image and append it to the validation section
       validator = cross;
       document.getElementById('checklocation').appendChild(validator);
-      // Set the note's id to wrongP to style it as negative validation
+      // Set the note's class to wrongP to style it as negative validation
       // fill the note with negative validation text, and append it to the validation section.
-      note.setAttribute('id', 'wrongP');
+      note.setAttribute('class', 'wrongP');
       note.textContent = 'The correct romanji was ' + randomHira.answer + '.';
       document.getElementById('validationSection').appendChild(note);
       // Push name of randomHira into noRepeat array
